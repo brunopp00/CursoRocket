@@ -13,6 +13,7 @@ img {
   height: auto;
 }
 :root {
+  --header-height:4.5rem;
   --hue: 159;
   --base-color: hsl(var(--hue) 36% 57%);
   --base-color-second: hsl(var(--hue) 65% 88%);
@@ -53,13 +54,32 @@ h1{
   height: 1px;
   background: linear-gradient(270deg,hsla(var(--hue), 36%, 57%, 1),hsla(var(--hue), 65%, 88%, 0.34))
 }
+.container {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+.section {
+  padding: 5rem 0;
+}
 
 #header {
   border-bottom: 1px solid #E4E4E4;
   margin-bottom: 2rem;
+  display: flex;
+
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: var(--body-color);
 }
 nav {
-  height: 4.5rem;
+  height: var(--header-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -72,18 +92,12 @@ nav {
 .logo span {
   color: var(--base-color);
 }
-
- .container {
-  width: 100%;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
+main {
+  margin-top: var(--header-height);
 }
-.grid {
-  display: grid;
-  gap: 2rem;
-}
-.section {
-  padding: 5rem 0;
+ 
+#home {
+  overflow: hidden;
 }
 #home .container {
   margin: 0;
